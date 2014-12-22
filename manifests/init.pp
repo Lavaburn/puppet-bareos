@@ -99,6 +99,7 @@ class bareos (
   $absent                  = params_lookup( 'absent' ),
   $disable                 = params_lookup( 'disable' ),
   $disableboot             = params_lookup( 'disableboot' ),
+  $repo_flavour            = params_lookup( 'repo_flavour' ),
   $monitor                 = params_lookup( 'monitor' , 'global' ),
   $monitor_tool            = params_lookup( 'monitor_tool' , 'global' ),
   $monitor_target          = params_lookup( 'monitor_target' , 'global' ),
