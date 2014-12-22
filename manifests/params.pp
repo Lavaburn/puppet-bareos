@@ -17,11 +17,11 @@ class bareos::params {
   ### Application related parameters
 
   $repo_distro = $::operatingsystem ? {
-    /(?i:Debian|Ubuntu|Mint)/                          => 'Debian_7.0',
-    /(?i:Ubuntu)/                                      => 'xUbuntu_12.04',
-    /(?i:redhat|centos|scientific|oraclelinux|fedora)/ => "${::operatingsystem}_${::operatingsystemmajrelease}",
-    default                                            => 'UNKNOWN',
-  }
+		/(?i:Debian)/ => "Debian_${::lsbdistrelease}",
+		/(?i:Ubuntu|Mint)/ => "xUbuntu_${::lsbdistrelease}",
+		/(?i:redhat|centos|scientific|oraclelinux|fedora)/ => "${::operatingsystem}_${::operatingsystemmajrelease}",
+		default => 'UNKNOWN',
+	}
 
   # One of http://download.bareos.org/bareos/release/
   $repo_flavour = 'latest'
